@@ -9,9 +9,10 @@ st.set_page_config(layout='wide')
 @st.cache_data
 def carregar_dados():
     # O "../" serve para sair da pasta pages e achar os arquivos na raiz do GitHub
-    caminho_reviews = "../customer reviews.csv"
-    caminho_books = "../Top-100 Trending Books.csv"
-    
+    # Modifique apenas estas duas linhas na sua função carregar_dados():
+    caminho_reviews = "customer reviews.csv"
+    caminho_books = "Top-100 Trending Books.csv"
+ 
     df_rev = pd.read_csv(caminho_reviews)
     df_books = pd.read_csv(caminho_books)
     
