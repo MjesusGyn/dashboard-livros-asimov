@@ -2,8 +2,9 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-df_reviews = pd.read_csv("datasets/customer reviews.csv") 
-df_top_100_books = pd.read_csv("datasets/Top-100 Trending Books.csv")
+# Mude as linhas 5 e 6 para buscarem os arquivos direto na raiz:
+df_reviews = pd.read_csv("customer reviews.csv")
+df_top_100_books = pd.read_csv("Top-100 Trending Books.csv")
 
 price_max = df_top_100_books["book price"].max()
 price_min = df_top_100_books["book price"].min()
