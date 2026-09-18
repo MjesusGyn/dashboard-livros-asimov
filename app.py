@@ -3,14 +3,15 @@ import pandas as pd
 
 st.set_page_config(layout='wide')
 
-# 1. Carregar dados diretamente do GitHub (Links 100% Corretos)
+# 1. Carregar dados localmente (Puxando direto da raiz do GitHub)
 @st.cache_data
 def carregar_dados():
-    url_reviews = "https://githubusercontent.com"
-    url_books = "https://githubusercontent.com"
+    # Como os CSVs estão na raiz do repositório, basta passar o nome do arquivo direto
+    caminho_reviews = "customer reviews.csv"
+    caminho_books = "Top-100 Trending Books.csv"
     
-    df_rev = pd.read_csv(url_reviews)
-    df_books = pd.read_csv(url_books)
+    df_rev = pd.read_csv(caminho_reviews)
+    df_books = pd.read_csv(caminho_books)
     
     df_books["book title"] = df_books["book title"].astype(str).str.strip()
     df_rev["book name"] = df_rev["book name"].astype(str).str.strip()
